@@ -100,3 +100,16 @@ console.log(numbers.toSorted((a,b) => b - a)); // ordena o array em ordem decres
 // menor valor
 console.log(numbers.toSorted((a,b) => a - b)[0]); // menor valor
 console.log(numbers.toSorted((a,b) => b - a)[0]); // maior valor
+
+// spread
+console.log([...girias, ...numbers, 'lanelus2']);
+
+
+const giriaComL=[];
+for (let i = 0; i < girias.length; i++) {
+  const giria = girias[i];
+  if (giria[0].toLowerCase() === 'l') {
+    giriaComL.push(giria);
+  }
+}
+console.log(giriaComL);
