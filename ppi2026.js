@@ -113,3 +113,56 @@ for (let i = 0; i < girias.length; i++) {
   }
 }
 console.log(giriaComL);
+
+const criador = {
+  nome: 'Iohan',
+  criacao: 'Lanelus',
+  aura: 983989388892
+};
+
+console.log(criador.criacao);
+console.log(Object.keys(criador));
+console.log(Object.values(criador));
+
+const pessoa = {...criador, especie: 'humana'};
+console.log(Object.keys(pessoa));
+console.log(Object.values(pessoa));
+
+console.log(pessoa);
+
+const {nome, especie} = pessoa;
+console.log(nome, especie);
+
+function Product(name, sto, ram, price, qty, category){
+  this.name = name;
+  this.sto = sto;
+  this.ram = ram;
+  this.price = price;
+  this.qty = qty;
+  this.category = category;
+};
+
+const p1 = new Product('iPhone', 256, 16, 5000, 10, 'Celular');
+const p2 = new Product('iPad', 512, 16, 8000, 20, 'Tablet');
+const p3 = new Product('Macbook', 1024, 24, 15000, 30, 'Notebook');
+const p4 = new Product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
+const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
+const p6 = new Product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
+
+const estoque = [ {...p1}, {...p2}, {...p3}, {...p4}, {...p5}, {...p6} ];
+console.log(estoque);
+
+// DESAFIO 1
+
+//   a) Valor total de todos os produtos em estoque
+let valorTotal = (p1.price * p1.qty) + (p2.price * p2.qty) + (p3.price * p3.qty) + (p4.price * p4.qty) + (p5.price * p5.qty) + (p6.price * p6.qty); 
+
+  // b) Ordene os produtos por nome (crescente/descrescente)
+let pOrdenadosNomeCrescente = estoque.toSorted((a, b)=>(a.name > b.name) - (a.name < b.name));
+let pOrdenadosNomeDecrescente = estoque.toSorted((a, b)=>(a.name < b.name) - (a.name > b.name));
+console.log(pOrdenadosNomeCrescente);
+console.log(pOrdenadosNomeDecrescente);
+  // c) Ordene os produtos por preço (crescente/descrescente)
+
+  // d) Filtre produtos de acordo uma categoria
+
