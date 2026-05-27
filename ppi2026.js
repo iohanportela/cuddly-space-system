@@ -156,13 +156,15 @@ console.log(estoque);
 
 //   a) Valor total de todos os produtos em estoque
 let valorTotal = (p1.price * p1.qty) + (p2.price * p2.qty) + (p3.price * p3.qty) + (p4.price * p4.qty) + (p5.price * p5.qty) + (p6.price * p6.qty); 
-
   // b) Ordene os produtos por nome (crescente/descrescente)
 let pOrdenadosNomeCrescente = estoque.toSorted((a, b)=>(a.name > b.name) - (a.name < b.name));
 let pOrdenadosNomeDecrescente = estoque.toSorted((a, b)=>(a.name < b.name) - (a.name > b.name));
 console.log(pOrdenadosNomeCrescente);
 console.log(pOrdenadosNomeDecrescente);
   // c) Ordene os produtos por preço (crescente/descrescente)
+let pOrdenadosPrecoCrescente = estoque.toSorted((a, b)=>a.price - b.price);
+let pOrdenadosPrecoDecrescente = estoque.toSorted((a, b)=>b.price - a.price);
 
   // d) Filtre produtos de acordo uma categoria
-
+let pFiltradoCategoria=estoque.filter((p) => p.category === 'Celular');
+console.log(pFiltradoCategoria);
