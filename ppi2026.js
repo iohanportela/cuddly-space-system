@@ -156,18 +156,16 @@ const estoque = [
   { ...p5 },
   { ...p6 },
 ];
-console.log(estoque);
+// console.log(estoque);
 
 // DESAFIO 1
 
 //   a) Valor total de todos os produtos em estoque
-let valorTotal =
-  p1.price * p1.qty +
-  p2.price * p2.qty +
-  p3.price * p3.qty +
-  p4.price * p4.qty +
-  p5.price * p5.qty +
-  p6.price * p6.qty;
+const valorTotal = estoque
+  .reduce((valor, p) => valor + p.price * p.qty, 0)
+  .toFixed(2);
+console.log(valorTotal);
+
 // b) Ordene os produtos por nome (crescente/descrescente)
 let pOrdenadosNomeCrescente = estoque.toSorted(
   (a, b) => (a.name > b.name) - (a.name < b.name),
@@ -177,6 +175,7 @@ let pOrdenadosNomeDecrescente = estoque.toSorted(
 );
 console.log(pOrdenadosNomeCrescente);
 console.log(pOrdenadosNomeDecrescente);
+
 // c) Ordene os produtos por preço (crescente/descrescente)
 let pOrdenadosPrecoCrescente = estoque.toSorted((a, b) => a.price - b.price);
 let pOrdenadosPrecoDecrescente = estoque.toSorted((a, b) => b.price - a.price);
