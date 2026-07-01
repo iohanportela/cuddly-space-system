@@ -1,0 +1,11 @@
+header {
+    background-color: crimson;
+    color: cyan;
+    height: 20rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+header h1 {
+    font-size: 5em;
+}

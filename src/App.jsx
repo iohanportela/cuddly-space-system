@@ -1,28 +1,57 @@
 import './App.css';
+import Header from './components/Header';
 
 function App() {
+
+  const notices =[
+  {id: 1,
+    title: 'Secitex Macau 2026',
+    category: "Evento",
+    description: "Inscrições abertas para oficinas e palestras",
+    author: 'COINF/MC',
+    date: '01/07/2026',
+    featured: true,
+  },
+  {id: 2,
+    title: 'Manutencao do  Lab. de Informatica 2', 
+    category: "Aviso",
+    description: "Indisponível na sexta 03/07/2026",
+    author: 'CTI/MC',
+    date: '01/07/2026',
+    featured: false,
+  }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+
+    <Header
+    title={"Programação para Internet"}
+    subtitle={"IFRN Lanelus"}
+    />
+
+    <main className="main">    
+    <h1>Lanelus</h1>
+    
+    {notices.map((notice) => (
+      <article>
+        <p>{notice.category}</p>
+        <p>{notice.title}</p>
+        <p>{notice.description}</p>
+        <div>
+          <span>Por: {notice.author} </span>
+          <span>Data: {notice.date} </span>
+        </div>
+      </article>
+    ))}
+
+      <div>
+        <span>Por: Autor</span>
+        <span>Data: Data do Post</span>
+      </div>
+
+    </main>
+    </>
   );
 }
 
