@@ -44,12 +44,6 @@ function App() {
         </div>
       </article>
     ))}
-
-      <div>
-        <span>Por: Autor</span>
-        <span>Data: Data do Post</span>
-      </div>
-
     </main>
     </>
   );
